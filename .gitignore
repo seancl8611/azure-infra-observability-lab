@@ -8,4 +8,5 @@
 .vscode/
 .DS_Store
 Thumbs.db
-passwords.txt
+passwords.txtinfra/terraform.tfvars
+*.tfvars
