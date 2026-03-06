@@ -1,0 +1,8 @@
+// VM Heartbeat Status
+// Lists VMs and their last heartbeat time. A gap greater than 5 minutes
+// indicates the VM may be down or the agent is unresponsive.
+
+Heartbeat
+| summarize LastHeartbeat = max(TimeGenerated) by Computer, OSType, ResourceGroup
+| extend MinutesSinceHeartbeat = datetime_diff('minute', now(), LastHeartbeat)
+| order by MinutesSinceHeartbeat desc

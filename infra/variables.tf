@@ -29,9 +29,3 @@ variable "alert_email" {
   description = "Email address to receive alert notifications"
   type        = string
 }
-
-variable "allowed_http_source" {
-  description = "Source for HTTP inbound (use * for public demo, or your IP)"
-  type        = string
-  default     = "*"
-}

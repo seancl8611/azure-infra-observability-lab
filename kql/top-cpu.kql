@@ -1,0 +1,9 @@
+// CPU Utilization Over Time
+// Tracks processor usage trends to identify sustained high load or spikes.
+// Useful for capacity planning and correlating with alert triggers.
+
+Perf
+| where ObjectName == "Processor" and CounterName == "% Processor Time"
+| where InstanceName == "_Total"
+| summarize AvgCPU = avg(CounterValue), MaxCPU = max(CounterValue) by Computer, bin(TimeGenerated, 5m)
+| order by TimeGenerated desc

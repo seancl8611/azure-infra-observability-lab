@@ -117,12 +117,12 @@
   <rect x="262" y="332" width="160" height="50" rx="3" fill="#FFF3E0" stroke="#BF360C" stroke-width="0.8"/>
   <text x="272" y="346" font-size="8.5" font-weight="600" fill="#BF360C">NSG: nsg-web-dev</text>
   <text x="272" y="358" font-size="8" fill="#444">Allow SSH (22) from allowed_ssh_ip</text>
-  <text x="272" y="370" font-size="8" fill="#444">Allow HTTP (80) from allowed_ssh_ip</text>
+  <text x="272" y="370" font-size="8" fill="#444">Allow HTTP (80) from Internet (*)</text>
   <text x="272" y="380" font-size="8" fill="#999">Deny all other inbound</text>
 
   <!-- VM -->
   <rect x="262" y="388" width="160" height="24" rx="3" fill="#E3F2FD" stroke="#1565C0" stroke-width="0.8"/>
-  <text x="272" y="404" font-size="8.5" font-weight="600" fill="#1565C0">vm-web-dev (Standard_B1s)</text>
+  <text x="272" y="404" font-size="8.5" font-weight="600" fill="#1565C0">vm-web-dev (Standard_D2s_v3)</text>
 
   <!-- VM detail line -->
   <text x="272" y="414" font-size="7.5" fill="#444">Ubuntu 22.04 LTS · nginx · stress-ng · AMA</text>

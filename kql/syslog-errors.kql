@@ -1,0 +1,8 @@
+// Syslog Error Summary
+// Aggregates error-level and above syslog messages by facility.
+// Helps identify which system components are producing the most issues.
+
+Syslog
+| where SeverityLevel in ("err", "crit", "alert", "emerg")
+| summarize ErrorCount = count() by Facility, SeverityLevel, Computer, bin(TimeGenerated, 1h)
+| order by ErrorCount desc

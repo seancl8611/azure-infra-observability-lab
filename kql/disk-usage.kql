@@ -1,0 +1,10 @@
+// Disk Free Space Monitoring
+// Identifies volumes approaching capacity (< 20% free).
+// Proactive monitoring to prevent disk-full outages.
+
+Perf
+| where ObjectName == "LogicalDisk" and CounterName == "% Free Space"
+| where InstanceName != "_Total"
+| summarize AvgFreePercent = avg(CounterValue) by Computer, InstanceName, bin(TimeGenerated, 15m)
+| where AvgFreePercent < 20
+| order by AvgFreePercent asc

@@ -1,12 +1,35 @@
+# --- Terraform ---
 **/.terraform/*
-**/terraform.tfstate
-**/terraform.tfstate.*
-**/*.tfvars
-**/*.tfvars.json
-**/crash.log
-**/crash.*.log
-.vscode/
+*.tfstate
+*.tfstate.*
+*.tfplan
+crash.log
+crash.*.log
+
+# Terraform variable files (keep out of repo)
+*.tfvars
+*.tfvars.json
+
+# Terraform lockfile (keep this IN the repo, so do NOT ignore)
+# .terraform.lock.hcl
+
+# --- OS / Editor ---
 .DS_Store
 Thumbs.db
-passwords.txtinfra/terraform.tfvars
-*.tfvars
+.vscode/
+.idea/
+
+# --- Logs / Temp ---
+*.log
+tmp/
+temp/
+
+# --- Secrets / Keys (never commit) ---
+*.pem
+*.pfx
+*.key
+*.ppk
+.env
+.env.*
+fc-main.json
+fc-pr.json

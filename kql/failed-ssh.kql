@@ -1,0 +1,10 @@
+// Failed SSH Login Attempts
+// Surfaces brute-force attempts and unauthorized access from syslog auth logs.
+// Use this query to investigate suspicious login activity on Linux VMs.
+
+Syslog
+| where Facility == "auth" or Facility == "authpriv"
+| where SyslogMessage contains "Failed password" or SyslogMessage contains "Invalid user"
+| parse SyslogMessage with * "from " SourceIP " port " *
+| summarize FailedAttempts = count() by SourceIP, Computer, bin(TimeGenerated, 1h)
+| order by FailedAttempts desc
