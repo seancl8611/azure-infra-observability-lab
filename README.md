@@ -8,7 +8,7 @@ Built to demonstrate the end-to-end workflow a cloud/DevOps engineer uses to pro
 
 ## Architecture
 
-![Architecture](docs/diagrams/architecture.svg)
+![Architecture](docs/diagrams/architecture.png)
 
 ---
 
@@ -54,7 +54,7 @@ Terraform, Azure CLI, GitHub Actions, Azure VNet / NSG, Azure Linux VM, Azure Mo
 │   ├── terraform-plan.yml  # Runs on PRs: fmt, validate, plan
 │   └── terraform-apply.yml # Runs on push to main: apply (production env)
 └── docs/
-    ├── diagrams/architecture.svg
+    ├── diagrams/architecture.png
     ├── runbook-cpu-alert-investigation.md
     └── screenshots/
 ```
